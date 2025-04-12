@@ -28,7 +28,9 @@ router.get("/", async (req, res, next) => {
         item.server_name !== "Hestia" &&
         item.server_name !== "Urania" &&
         item.server_name !== "kbo" &&
-        item.server_name !== "stgm-web"
+        item.server_name !== "stgm-web" &&
+        item.server_name !== "Themis" &&
+        item.server_name !== "Mattermost"
     )
     .sort((a, b) => {
       return (
