@@ -27,9 +27,9 @@
 				{% set drive_size = ((drive.size / (1024*1024))|round(2, 'ceil'))|number_format(2) %}
 				{% set drive_usedsize = ((drive.used / (1024*1024))|round(2, 'ceil'))|number_format(2) %}
 				{% set drive_usedsize_percent = (((drive.used / drive.size) * 100)|round(2, 'ceil'))|number_format(2) %}
+				{% set drive_usedsize_percent_raw = (drive.used / drive.size) * 100 %}
 				{% set drive_avail = ((drive.avail / (1024*1024))|round(2, 'ceil'))|number_format(2) %}
-
-				<tr>
+				<tr class="{% if drive_usedsize_percent_raw >= 75 %}table-danger{% endif %}">
 					<td>{{ drive.id }}</td>
 					<td>{{ drive.server_name }}</td>
 					<td>{{ drive.server_location }}</td>
